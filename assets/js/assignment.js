@@ -1,4 +1,8 @@
 // Assignment code here
+var lowers = "qwertyuiopasdfghjklzxcvbnm";
+var uppers = "QWERTYUIOPASDFGHJKLZXCVBNM";
+var numbers = "1234567890";
+var specials = "`~!@#$%^&*()[]{}-_=+;:',.<>?/";
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -10,6 +14,7 @@ function writePassword() {
   
   while (passLength < 8 || passLength > 128) {
     passLength = alert("Length must be 8-128 characters.");
+    return writePassword();
   }
   
   // the var "password" calls the func "generatePassword".
@@ -22,21 +27,35 @@ function writePassword() {
 
 };
 
-function generatePassword () {
+function generatePassword() {
   var newPass = "";
 
   var lo = confirm("Would you like your password to contain lowercase characters?");
+  if (lo) {
+    newPass += lowers.charAt(Math.random() * lowers.length);
+  }
+  
   var up = confirm("Would you like your password to contain uppercase character?");
-  var num = confirm("Would you like your password to contain numerical characters?");
-  var spec = confirm("Would you like your password to contain special characters?");
-
-  while (!lo || !up || !num || spec) {
-    alert("You must pick one character!")
-
-    return generatePassword()
+  if (up) {
+    newPass += uppers.charAt(Math.random() * uppers.length);
   }
 
+  var num = confirm("Would you like your password to contain numerical characters?");
+  if (num) {
+    newPass += numbers.charAt(Math.floor(Math.random() * numbers.length));
+  }
 
+  var spec = confirm("Would you like your password to contain special characters?");
+  if (spec) {
+    newPass += specials.charAt(Math.random() * specials.length);
+  }
+  
+  while (newPass == "" || newPass == null) {
+    alert("You must include at least one type of character.")
+    return generatePassword();
+  }
+
+  return newPass;
 };
 
 // Add event listener to generate button
