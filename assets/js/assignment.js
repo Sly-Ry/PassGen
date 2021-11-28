@@ -39,7 +39,11 @@ function generatePassword() {
   }
   
   // if all are picked
-  if (cLowers && cUppers && cNumbs && cSyms) {
+  if (!cLowers && !cUppers && !cNumbs && !cSyms) {
+    passContain = alert("You gotta pick one criteria for your password!");
+  }
+  
+  else if (cLowers && cUppers && cNumbs && cSyms) {
     passContain = lower.concat(upper, number, symbol);
   }
   // if only three are picked
@@ -87,8 +91,21 @@ function generatePassword() {
   else if (cSyms) {
     passContain = symbol;
   }
-  console.log("this happened")
-  return "passwyrd"; 
+  
+  // create a var that will hold an array of random characters
+  var rdmPass = [];
+
+  // creates the randomness of the password that will go in rdmPass var
+  for (i = 0; i < plength; i++) {
+    newPass = passContain[Math.floor(Math.random() * passContain.length)];
+    
+    // pushes the random elements to the rdmPass var
+    rdmPass.push(newPass)
+  }
+  
+  var passwyrd = rdmPass;
+
+  return passwyrd; 
   
 };
 
@@ -99,23 +116,6 @@ function writePassword() {
   
   passwordText.value = generatePassword();
 };
-
-
-//   let generatePassword = '';
-//   var typesCount = lower() + upper() + number() + special();
-//   var typesArr = [{lower}, {upper}, {number}, {special}].filter(item => Object.values(item)[0]);
-
-//   for (let i = 0; i < length; i += typesCount) {
-//     typesArr.forEach(type => {
-//       const funcName = Object.keys(type)[0];
-//       generatePassword += randoChar[funcName]();
-//     });
-//   }
-
-//   var finalPassword = generatePassword.slice(0, length);
-
-//   return finalPassword;
-// };
 
 
 // Add event listener to generate button
