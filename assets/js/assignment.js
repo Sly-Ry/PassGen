@@ -1,69 +1,121 @@
 // Assignment code here
 
-// // Get references to the #generate element
+// Character Arrays
+// lowercase alpha
+lower = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m'];
+
+// uppercase alpha
+upper = ['Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M'];
+
+// numbers
+number = [1,2,3,4,5,6,7,8,9,0];
+
+// special characters
+symbol = ['"','`','~','!','@','#','$','%','^','&','*','(',')','[',']','{','}','-','_','=','+',';',':',"'",',','.','<','>','?','/','"'];
+
+// variable that will hold confirmed characters
+var passContain;
+
+// Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-
-function writePassword() {
-  var passLength = window.prompt("How many characters would you like your password to be?");
-    
-  while (passLength < 8 || passLength > 128) {
-    passLength = alert("Length must be 8-128 characters.");
-    return writePassword();
+// write a function for generatePassword
+function generatePassword() {
+  // ask user how long they want their password to be
+  plength = parseInt(prompt("How many characters would you like your password to be?"));
+  
+  // make sure their password length fits criteria
+  if (plength < 8 || plength > 128) {
+    plength = alert("Length must be 8-128 characters.");
+  }
+  else if (!plength) {
+    alert("You gots to enter a number!");
+  } 
+  else {
+    cLowers = confirm("You want your password to contain Lowercase characters?");
+    cUppers = confirm("You want your password to contain Uppercase characters?");
+    cNumbs = confirm("You want your password to contain Numerical characters?");
+    cSyms = confirm("You want your password to contain Special characters?");
   }
   
-  var lo = confirm("Would you like your password to contain lowercase characters?");   
-  var up = confirm("Would you like your password to contain uppercase character?");    var num = confirm("Would you like your password to contain numerical characters?");    var spec = confirm("Would you like your password to contain special characters?");
-      
-  while (!(lo && up && num && spec)) {
-    alert("You must include at least one type of character.")
-    return writePassword();
+  // if all are picked
+  if (cLowers && cUppers && cNumbs && cSyms) {
+    passContain = lower.concat(upper, number, symbol);
   }
+  // if only three are picked
+  else if (cLowers && cUppers && cNumbs) {
+    passContain = lower.concat(upper, number);
+  }
+  else if (cLowers && cUppers && cSyms) {
+    passContain = lower.concat(upper, symbol);
+  }
+  else if (cLowers && cNumbs && cSyms) {
+    passContain = lower.concat(number, symbol);
+  }
+  else if (cUppers && cNumbs && cSyms) {
+    passContain = upper.concat(number, symbol);
+  }
+  // if only two are picked
+  else if (cLowers && cUppers) {
+    passContain = lower.concat(upper);
+  }
+  else if (cLowers && cNumbs) {
+    passContain = lower.concat(number);
+  }
+  else if (cLowers && cSyms) {
+    passContain = lower.concat(symbol);
+  }
+  else if (cUppers && cNumbs) {
+    passContain = upper.concat(number);
+  }
+  else if (cUppers && cSyms) {
+    passContain = upper.concat(symbol);
+  }
+  else if (cNumbs && cSyms) {
+    passContain = number.concat(symbol);
+  }
+  // if only one is picked
+  else if (cLowers) {
+    passContain = lower;
+  }
+  else if (cUppers) {
+    passContain = upper;
+  }
+  else if (cNumbs) {
+    passContain = number;
+  }
+  else if (cSyms) {
+    passContain = symbol;
+  }
+  console.log("this happened")
+  return "passwyrd"; 
+  
+};
+
+// Write password to the #password input
+function writePassword() {
 
   var passwordText = document.querySelector("#password"); 
   
-  passwordText.value = generatePassword(lo, up, num, spec, passLength);
-
+  passwordText.value = generatePassword();
 };
 
-var lower = rdmLower;
-var upper = rdmUpper;
-var number = rdmNum;
-var special = rdmSpec;
 
-function generatePassword(length) {
-  let generatePassword = '';
-  var typesCount = lower() + upper() + number() + special();
-  var typesArr = [{lower}, {upper}, {number}, {special}].filter(item => Object.values(item)[0]);
+//   let generatePassword = '';
+//   var typesCount = lower() + upper() + number() + special();
+//   var typesArr = [{lower}, {upper}, {number}, {special}].filter(item => Object.values(item)[0]);
 
-  for (let i = 0; i < length; i += typesCount) {
-    typesArr.forEach(type => {
-      const funcName = Object.keys(type)[0];
-      generatePassword += randoChar[funcName]();
-    });
-  }
+//   for (let i = 0; i < length; i += typesCount) {
+//     typesArr.forEach(type => {
+//       const funcName = Object.keys(type)[0];
+//       generatePassword += randoChar[funcName]();
+//     });
+//   }
 
-  var finalPassword = generatePassword.slice(0, length);
+//   var finalPassword = generatePassword.slice(0, length);
 
-  return finalPassword;
-};
-
-function rdmLower() {
-  return Math.random("qwertyuiopasdfghjklzxcvbnm")
-}
-
-function rdmUpper() {
-  return Math.random("QWERTYUIOPASDFGHJKLZXCVBNM")
-}
-
-function rdmNum() {
-  return Math.random("1234567890")
-}
-
-function rdmSpec() {
-  return  Math.random("`~!@#$%^&*()[]{}-_=+;:',.<>?/")
-}
+//   return finalPassword;
+// };
 
 
 // Add event listener to generate button
