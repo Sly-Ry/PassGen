@@ -1,4 +1,4 @@
-# PASSGEN
+# PASSGEN - A Randomized Password Generator
 ## A personal JavaScript development project.
 
 This is a randomized password generator that prints anywhere between 8-128 characters using letters(lower&uppercase English alphabet), numbers(0-9) and special characters.
