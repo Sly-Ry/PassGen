@@ -7,6 +7,7 @@ I wanted to create a site where a user could create a personalized password for 
 
 ## Installation
 click the link to pull up the website - https://sly-ry.github.io/PassGen/
+
 (As of right now, PassGen is only available through GitHub)
 
 ## Usage
