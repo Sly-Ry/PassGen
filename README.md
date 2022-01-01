@@ -41,9 +41,9 @@ If the user doesn't pick any criteria to include in their password, they are pre
 
 ## Credits
 - Members of Thunderbird House:
-  Andrew Wales
-  Gunther Wagoner
-  Kevin Wilkerson
+  - Andrew Wales 
+  - Gunther Wagoner
+  - Kevin Wilkerson
 - https://google.com/
 - https://youtube.com/
 - https://stackoverflow.com/
