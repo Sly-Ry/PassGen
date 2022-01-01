@@ -5,11 +5,11 @@ This is a randomized password generator that prints anywhere between 8-128 chara
 
 I wanted to create a site where a user could create a personalized password for themselves in case they couldn't create one for themselves.
 
-##Installation
+## Installation
 click the link to pull up the website - https://sly-ry.github.io/PassGen/
 (As of right now, PassGen is only available through GitHub)
 
-##Usage
+## Usage
 The screen should load with the following image:
 ![Screenshot (3)](https://user-images.githubusercontent.com/93052960/147857651-b54da18a-d428-498d-9870-a840cc2ddcb7.png)
 
@@ -31,20 +31,20 @@ This includes:
   - ![Screenshot (9)](https://user-images.githubusercontent.com/93052960/147857951-b0de7b53-47a3-4fb0-9e34-8adf8309274e.png)
 
 Once all prompts are answered, a password is generated that matches the selected criteria and is displayed onto the page:
-![Screenshot (10)](https://user-images.githubusercontent.com/93052960/147857977-c8428a6c-a5d1-4358-823a-2fd16c04a111.png)
+- ![Screenshot (10)](https://user-images.githubusercontent.com/93052960/147857977-c8428a6c-a5d1-4358-823a-2fd16c04a111.png)
 
 If the user doesn't enter a number between 8 & 128 for the length of the password, they are presented with an error message:
-![Screenshot (5)](https://user-images.githubusercontent.com/93052960/147857924-fedd7a73-6b57-47c4-8f94-fdc07c89ba36.png)
+- ![Screenshot (5)](https://user-images.githubusercontent.com/93052960/147857924-fedd7a73-6b57-47c4-8f94-fdc07c89ba36.png)
 
 If the user doesn't pick any criteria to include in their password, they are presented with an error message:
-![Screenshot (11)](https://user-images.githubusercontent.com/93052960/147858024-ea04d3e8-0466-4677-95bc-fa5cd4a385b1.png)
+- ![Screenshot (11)](https://user-images.githubusercontent.com/93052960/147858024-ea04d3e8-0466-4677-95bc-fa5cd4a385b1.png)
 
-##Credits
-Members of Thunderbird House:
+## Credits
+- Members of Thunderbird House:
   Andrew Wales
   Gunther Wagoner
   Kevin Wilkerson
-https://google.com/
-https://youtube.com/
-https://stackoverflow.com/
-https://github.com/jamierachael
+- https://google.com/
+- https://youtube.com/
+- https://stackoverflow.com/
+- https://github.com/jamierachael
