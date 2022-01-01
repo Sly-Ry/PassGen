@@ -6,7 +6,7 @@ This is a randomized password generator that prints anywhere between 8-128 chara
 I wanted to create a site where a user could create a personalized password for themselves in case they couldn't create one for themselves.
 
 ## Installation
-click the link to pull up the website - https://sly-ry.github.io/PassGen/
+Click the link to pull up the website - https://sly-ry.github.io/PassGen/
 
 (As of right now, PassGen is only available through GitHub)
 
