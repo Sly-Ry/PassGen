@@ -38,11 +38,11 @@ function generatePassword() {
     cSyms = confirm("You want your password to contain Special characters?");
   }
   
-  // if all are picked
+  // if none are picked
   if (!cLowers && !cUppers && !cNumbs && !cSyms) {
     passContain = alert("You gotta pick one criteria for your password!");
   }
-  
+  // if all are picked
   else if (cLowers && cUppers && cNumbs && cSyms) {
     passContain = lower.concat(upper, number, symbol);
   }
@@ -94,17 +94,17 @@ function generatePassword() {
   
   // create a var that will hold an array of random characters
   var rdmPass = [];
+  
 
   // creates the randomness of the password that will go in rdmPass var
   for (i = 0; i < plength; i++) {
     newPass = passContain[Math.floor(Math.random() * passContain.length)];
-    
+
     // pushes the random elements to the rdmPass var
-    rdmPass.push(newPass)
+    rdmPass.push(newPass);
   }
   
-  var passwyrd = rdmPass;
-
+  var passwyrd = rdmPass.join("");
   return passwyrd; 
   
 };
